@@ -1,0 +1,103 @@
+// SonarLint
+plugins {
+    id("name.remal.sonarlint") version "3.3.3"
+    id("io.freefair.lombok") version "8.1.0" apply false
+}
+
+defaultTasks 'clean', 'build'
+
+subprojects {
+    apply(plugin: 'java-library')
+    apply(plugin: 'name.remal.sonarlint')
+    apply(plugin: 'io.freefair.lombok')
+
+    ext {
+        versions = [
+                assertj    : '3.24.2',
+                cucumber   : '7.13.0',
+                guava      : '32.1.1-jre',
+                jackson    : '2.15.2',
+                junit      : '5.9.1',
+                junit_suite: '1.9.3',
+                selenium   : '3.141.59',
+                slf4j      : '2.0.7',
+        ]
+
+        libs = [:]
+
+        libs.cucumber = ["io.cucumber:cucumber-java:${versions.cucumber}",
+                         "io.cucumber:cucumber-junit-platform-engine:${versions.cucumber}"]
+
+        libs.guava = ["com.google.guava:guava:${versions.guava}"]
+
+        libs.jackson = [
+                "com.fasterxml.jackson.core:jackson-databind:${versions.jackson}",
+                "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:${versions.jackson}"]
+
+        libs.selenium = ["org.seleniumhq.selenium:selenium-java:${versions.selenium}",
+                         "org.seleniumhq.selenium:selenium-server:${versions.selenium}",
+                         "org.seleniumhq.selenium:selenium-support:${versions.selenium}"]
+
+        libs.selenium_chrome_driver = "org.seleniumhq.selenium:selenium-chrome-driver:${versions.selenium}"
+
+        libs.selenium_edge_driver = "org.seleniumhq.selenium:selenium-edge-driver:${versions.selenium}"
+
+        libs.selenium_ie_driver = "org.seleniumhq.selenium:selenium-ie-driver:${versions.selenium}"
+
+        libs.selenium_fx_driver = "org.seleniumhq.selenium:selenium-firefox-driver:${versions.selenium}"
+
+        libs.selenium_safari_driver = "org.seleniumhq.selenium:selenium-safari-driver:${versions.selenium}"
+
+        libs.selenium_all_drivers = [libs.selenium_chrome_driver,
+                                     libs.selenium_edge_driver,
+                                     libs.selenium_ie_driver,
+                                     libs.selenium_fx_driver,
+                                     libs.selenium_safari_driver]
+
+        libs.slf4j = ["org.slf4j:slf4j-api:${versions.slf4j}"]
+
+        libs.slf4j_simple = ["org.slf4j:slf4j-simple:${versions.slf4j}"]
+
+        libs.test = ["org.junit.jupiter:junit-jupiter-api:${versions.junit}",
+                     "org.assertj:assertj-core:${versions.assertj}",
+                     "org.junit.jupiter:junit-jupiter-params:${versions.junit}",
+                     "org.junit.jupiter:junit-jupiter-engine:${versions.junit}",
+                     "org.junit.platform:junit-platform-suite:${versions.junit_suite}"]
+    }
+
+    sourceCompatibility = targetCompatibility = 1.11
+
+    compileJava {
+        options.encoding = "UTF-8"
+        options.annotationProcessorPath = configurations.annotationProcessor
+        options.setAnnotationProcessorGeneratedSourcesDirectory(file("$projectDir/src/main/generated"))
+    }
+
+    compileTestJava {
+        options.encoding = "UTF-8"
+    }
+
+    repositories {
+        mavenCentral()
+    }
+
+    task wrapper(type: Wrapper) {
+        gradleVersion = '8.2'
+    }
+
+    version = '0.0.1'
+
+    test {
+        useJUnitPlatform()
+        testLogging {
+            afterSuite { desc, result ->
+                if (!desc.parent) { // will match the outermost suite
+                    println "Results: " +
+                            "${result.resultType} (${result.testCount} tests, " +
+                            "${result.successfulTestCount} successes, ${result.failedTestCount} failures, " +
+                            "${result.skippedTestCount} skipped)"
+                }
+            }
+        }
+    }
+}

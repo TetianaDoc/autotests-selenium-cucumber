@@ -1,0 +1,11 @@
+dependencies {
+    testImplementation project(':autotests-core')
+
+    testImplementation libs.cucumber
+    testImplementation libs.guava
+    testImplementation libs.jackson
+    testImplementation libs.selenium
+    testImplementation libs.selenium_all_drivers
+    testImplementation libs.slf4j_simple
+    testImplementation libs.test
+}

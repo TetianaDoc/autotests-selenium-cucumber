@@ -1,0 +1,9 @@
+dependencies {
+    implementation libs.guava
+    implementation libs.selenium
+    implementation libs.slf4j
+
+    testImplementation libs.guava
+    testImplementation libs.slf4j_simple
+    testImplementation libs.test
+}

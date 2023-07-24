@@ -1,0 +1,5 @@
+envs:
+  PROD:
+    basicUrl: https://addbot.online
+    userOrEmail: volodymyrdotsenko@gmail.com
+    password: 2bWQq5f0oKzelfJScj1gJjHxycIFSaGnuxiaN+BdN3CJcc5+C47307cqlw5FdNmPpEoFQHth

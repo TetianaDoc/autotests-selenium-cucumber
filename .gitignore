@@ -1,0 +1,18 @@
+# Ignore Gradle project-specific cache directory
+.gradle
+.idea
+*.iml
+*.ipr
+*.iws
+.DS_Store
+
+web-tests/build/
+web-tests/generated/
+web-tests/out/
+web-tests/src/main/generated/
+web-tests/src/test/resources/decr-pass
+
+autotests-core/build/
+autotests-core/generated/
+autotests-core/src/main/generated/
+autotests-core/out/
