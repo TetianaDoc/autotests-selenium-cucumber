@@ -1,2 +1,3 @@
-# volmyr-addbot-autotests
-AddBot WebDriver AutoTests
+# parabank-autotests
+Parabank WebDriver AutoTests Selenium Cucumber
+

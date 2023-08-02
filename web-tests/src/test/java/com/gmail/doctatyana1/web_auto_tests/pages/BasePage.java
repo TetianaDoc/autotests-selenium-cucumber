@@ -35,7 +35,7 @@ public abstract class BasePage extends LoadableComponent<BasePage> {
     PageFactory.initElements(driver, this);
   }
 
-  protected RemoteWebDriver getDriver() {
+  public RemoteWebDriver getDriver() {
     return driver;
   }
 

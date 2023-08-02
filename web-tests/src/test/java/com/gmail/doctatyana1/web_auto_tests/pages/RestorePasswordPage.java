@@ -11,7 +11,7 @@ import org.openqa.selenium.support.FindBy;
  * Restore Password page for restore password to the app.
  */
 @Getter
-public final class RestorePasswordPage extends AuthBasePage {
+public final class RestorePasswordPage extends HomeBasePage {
 
   public RestorePasswordPage(WebDriverProvider webDriverProvider, String url) {
     super(webDriverProvider.getRemoteWebDriver(), url);

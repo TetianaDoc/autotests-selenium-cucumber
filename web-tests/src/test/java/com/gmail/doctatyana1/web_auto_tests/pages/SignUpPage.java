@@ -12,7 +12,7 @@ import org.openqa.selenium.support.FindBy;
  * Sign Up page for registration to the app.
  */
 @Getter
-public final class SignUpPage extends AuthBasePage {
+public final class SignUpPage extends HomeBasePage {
 
   public SignUpPage(WebDriverProvider webDriverProvider, String url) {
     super(webDriverProvider.getRemoteWebDriver(), url);
