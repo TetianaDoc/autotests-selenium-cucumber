@@ -1,0 +1,4 @@
+envs:
+  PROD:
+    basicUrl: https://parabank.parasoft.com/parabank/services.htm
+

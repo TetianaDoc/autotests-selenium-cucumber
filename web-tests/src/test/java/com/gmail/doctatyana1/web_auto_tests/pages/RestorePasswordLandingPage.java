@@ -8,18 +8,18 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 /**
- * Restore Password page for restore password to the app.
+ * Restore Password page for restore password.
  */
 @Getter
-public final class RestorePasswordPage extends HomeBasePage {
+public final class RestorePasswordLandingPage extends BaseLandingPage {
 
-  public RestorePasswordPage(WebDriverProvider webDriverProvider, String url) {
+  public RestorePasswordLandingPage(WebDriverProvider webDriverProvider, String url) {
     super(webDriverProvider.getRemoteWebDriver(), url);
     load();
     isLoaded();
   }
 
-  public RestorePasswordPage(WebDriverProvider webDriverProvider) {
+  public RestorePasswordLandingPage(WebDriverProvider webDriverProvider) {
     super(webDriverProvider.getRemoteWebDriver());
   }
 

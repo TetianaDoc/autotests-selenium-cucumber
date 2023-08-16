@@ -1,0 +1,4 @@
+envs:
+  PROD:
+    basicUrl: https://www.parasoft.com/solutions/
+

@@ -1,28 +1,21 @@
 package com.gmail.doctatyana1.web_auto_tests.actions;
 
-import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
-
-import com.gmail.doctatyana1.web_auto_tests.pages.SignUpPage;
-import com.gmail.doctatyana1.web_auto_tests.core.WebDriverProvider;
-import lombok.extern.slf4j.Slf4j;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-
 /**
  * Provides actions for {@link SignUpPage}.
  */
 //@Slf4j
 //public final class SignUpPageActions extends BasePageActions implements PageAction {
 //
-//  private final SignUpPage page;
+//  private final SignUpLandingPage page;
 //
 //  public SignUpPageActions(WebDriverProvider webDriverProvider, String url) {
-//    super(new SignUpPage(webDriverProvider, url));
-//    page=(SignUpPage) getPage();
+//    super(new SignUpLandingPage(webDriverProvider, url));
+//    page=(SignUpLandingPage) getPage();
 //  }
 //
 //  public SignUpPageActions(WebDriverProvider webDriverProvider) {
-//    super(new SignUpPage(webDriverProvider));
-//    page=(SignUpPage) getPage();
+//    super(new SignUpLandingPage(webDriverProvider));
+//    page=(SignUpLandingPage) getPage();
 //  }
 //
 //  @Override

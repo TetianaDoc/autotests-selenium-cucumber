@@ -3,8 +3,8 @@ package com.gmail.doctatyana1.web_auto_tests.tests;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import com.gmail.doctatyana1.web_auto_tests.actions.SignInPageActions;
-import com.gmail.doctatyana1.web_auto_tests.pages.SignUpPage;
+import com.gmail.doctatyana1.web_auto_tests.actions.LandingPageActions;
+import com.gmail.doctatyana1.web_auto_tests.pages.SignUpLandingPage;
 //import com.gmail.doctatyana1.web_auto_tests.actions.RestorePasswordPageActions;
 //import com.gmail.doctatyana1.web_auto_tests.actions.SignUpPageActions;
 import com.gmail.doctatyana1.web_auto_tests.model.SignUpTestData;
@@ -12,67 +12,67 @@ import com.gmail.doctatyana1.web_auto_tests.model.SignUpTestData.SignUpTestDataB
 
 import java.io.File;
 import java.io.IOException;
+
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ValueSource;
 
 /**
- * Tests for {@link SignUpPage} page.
+ * Tests for {@link SignUpLandingPage} page.
  */
 @TestMethodOrder(OrderAnnotation.class)
 class SignUpPageTest extends BaseTest {
 
-  private static final String TEST_DATA = "src/test/resources/test-data/signUp-test-data.yaml";
-  private static SignUpTestData signUpTestData;
-  private static SignInPageActions signInPageActions;
- // private static SignUpPageActions signUpActions;
- // private static RestorePasswordPageActions restorePasswordPageActions;
+    private static final String TEST_DATA = "src/test/resources/test-data/signUp-test-data.yaml";
+    private static SignUpTestData signUpTestData;
+    private static LandingPageActions landingPageActions;
+    // private static SignUpPageActions signUpActions;
+    // private static RestorePasswordPageActions restorePasswordPageActions;
 
 
-  @BeforeAll
-  static void beforeAll() throws IOException {
-    setUp();
-    SignUpTestDataByEnv signUpTestDataByEnv =
-        readTestData(new File(TEST_DATA), SignUpTestDataByEnv.class);
-    signUpTestData = signUpTestDataByEnv.getEnvs().get(getEnvironment());
- //   signUpActions = new SignUpPageActions(provider, signUpTestData.getBasicUrl());
-    signInPageActions = new SignInPageActions(provider);
-   // restorePasswordPageActions = new RestorePasswordPageActions(provider);
-  }
+    @BeforeAll
+    static void beforeAll() throws IOException {
+        setUp();
+        SignUpTestDataByEnv signUpTestDataByEnv =
+                readTestData(new File(TEST_DATA), SignUpTestDataByEnv.class);
+        signUpTestData = signUpTestDataByEnv.getEnvs().get(getEnvironment());
+        //   signUpActions = new SignUpPageActions(provider, signUpTestData.getBasicUrl());
+        landingPageActions = new LandingPageActions(provider, signUpTestData.getBasicUrl());
+        // restorePasswordPageActions = new RestorePasswordPageActions(provider);
+    }
 
-  @AfterAll
-  static void afterAll() {
-    tierDown();
-  }
+    @AfterAll
+    static void afterAll() {
+        tierDown();
+    }
 
-  @Test
-  @Order(1)
-  void shouldProperDisplayAllElementsOnSignUpPage() {
-    // Act
+    @Test
+    @Order(1)
+    void shouldProperDisplayAllElementsOnSignUpPage() {
+        // Act
 //    signUpActions.waitForCookieConsentDisplayed();
-    // Assert
+        // Assert
 //    assertThat(signUpActions.isPageReady()).isTrue();
 //    assertThat(signUpActions.isRestorePasswordLinkEnabled()).isTrue();
 //    assertThat(signUpActions.isSelectedPackageButtonEnabled()).isTrue();
 //    assertThat(signUpActions.isLogoImgDisplayed()).isTrue();
 //    assertThat(signUpActions.isFirstNameInputEnabled()).isTrue();
 //    assertThat(signUpActions.isRecaptchaDisplayed()).isTrue();
-  }
+    }
 
-  @Test
-  @Order(2)
-  void shouldAcceptCookieOnSignInPage() {
-    // Act
-    //signUpActions.acceptCookie();
+    @Test
+    @Order(2)
+    void shouldAcceptCookieOnSignInPage() {
+        // Act
+        //signUpActions.acceptCookie();
 
-    // Assert
-    //assertThat(signUpActions.isCookieConsentDisplayed()).isFalse();
-  }}
+        // Assert
+        //assertThat(signUpActions.isCookieConsentDisplayed()).isFalse();
+    }
+}
 
 //  @Order(3)
 //  @ParameterizedTest
