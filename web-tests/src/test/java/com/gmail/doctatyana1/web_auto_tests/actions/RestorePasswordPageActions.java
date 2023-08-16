@@ -1,26 +1,21 @@
 package com.gmail.doctatyana1.web_auto_tests.actions;
 
-import com.gmail.doctatyana1.web_auto_tests.pages.RestorePasswordPage;
-import com.gmail.doctatyana1.web_auto_tests.core.WebDriverProvider;
-import lombok.extern.slf4j.Slf4j;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-
 /**
  * Provides actions for {@link RestorePasswordPage}.
  */
 //@Slf4j
 //public final class RestorePasswordPageActions extends BasePageActions implements PageAction {
 //
-//  private final RestorePasswordPage page;
+//  private final RestorePasswordLandingPage page;
 //
 //  public RestorePasswordPageActions(WebDriverProvider webDriverProvider, String url) {
-//    super(new RestorePasswordPage(webDriverProvider, url));
-//    page = (RestorePasswordPage) getPage();
+//    super(new RestorePasswordLandingPage(webDriverProvider, url));
+//    page = (RestorePasswordLandingPage) getPage();
 //  }
 //
 //  public RestorePasswordPageActions(WebDriverProvider webDriverProvider) {
-//    super(new RestorePasswordPage(webDriverProvider));
-//    page = (RestorePasswordPage) getPage();
+//    super(new RestorePasswordLandingPage(webDriverProvider));
+//    page = (RestorePasswordLandingPage) getPage();
 //  }
 //
 //  @Override

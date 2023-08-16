@@ -9,18 +9,18 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 /**
- * Sign Up page for registration to the app.
+ * Sign Up page for registration.
  */
 @Getter
-public final class SignUpPage extends HomeBasePage {
+public final class SignUpLandingPage extends BaseLandingPage {
 
-  public SignUpPage(WebDriverProvider webDriverProvider, String url) {
+  public SignUpLandingPage(WebDriverProvider webDriverProvider, String url) {
     super(webDriverProvider.getRemoteWebDriver(), url);
     load();
     isLoaded();
   }
 
-  public SignUpPage(WebDriverProvider webDriverProvider) {
+  public SignUpLandingPage(WebDriverProvider webDriverProvider) {
     super(webDriverProvider.getRemoteWebDriver());
   }
 

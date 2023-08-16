@@ -3,8 +3,8 @@ package com.gmail.doctatyana1.web_auto_tests.tests;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import com.gmail.doctatyana1.web_auto_tests.actions.SignInPageActions;
-import com.gmail.doctatyana1.web_auto_tests.pages.RestorePasswordPage;
+import com.gmail.doctatyana1.web_auto_tests.actions.LandingPageActions;
+import com.gmail.doctatyana1.web_auto_tests.pages.RestorePasswordLandingPage;
 //import com.gmail.doctatyana1.web_auto_tests.actions.RestorePasswordPageActions;
 //import com.gmail.doctatyana1.web_auto_tests.actions.SignUpPageActions;
 import com.gmail.doctatyana1.web_auto_tests.model.RestorePasswordTestData;
@@ -18,20 +18,18 @@ import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ValueSource;
 
 /**
- * Tests for {@link RestorePasswordPage} page.
+ * Tests for {@link RestorePasswordLandingPage} page.
  */
 @TestMethodOrder(OrderAnnotation.class)
 class RestorePasswordPageTest extends BaseTest {
 
   private static final String TEST_DATA = "src/test/resources/test-data/restorePassword-test-data.yaml";
   private static RestorePasswordTestData restorePasswordTestData;
-  private static SignInPageActions signInActions;
+  private static LandingPageActions landingPageActions;
  // private static SignUpPageActions signUpPageActions;
-  private static RestorePasswordPage restorePasswordPage;
+  private static RestorePasswordLandingPage restorePasswordPage;
   //private static RestorePasswordPageActions restorePasswordPageActions;
 
   @BeforeAll
@@ -41,7 +39,7 @@ class RestorePasswordPageTest extends BaseTest {
         readTestData(new File(TEST_DATA), RestorePasswordTestDataByEnv.class);
     restorePasswordTestData = restorePasswordTestDataByEnv.getEnvs().get(getEnvironment());
     //restorePasswordPageActions = new RestorePasswordPageActions(provider, restorePasswordTestData.getBasicUrl());
-    signInActions = new SignInPageActions(provider);
+    landingPageActions = new LandingPageActions(provider, restorePasswordTestData.getBasicUrl());
    // signUpPageActions = new SignUpPageActions(provider);
 
   }

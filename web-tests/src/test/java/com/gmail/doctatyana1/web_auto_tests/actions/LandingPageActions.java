@@ -1,0 +1,111 @@
+package com.gmail.doctatyana1.web_auto_tests.actions;
+
+import com.gmail.doctatyana1.web_auto_tests.pages.LandingPage;
+import com.gmail.doctatyana1.web_auto_tests.core.WebDriverProvider;
+import lombok.extern.slf4j.Slf4j;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
+/**
+ * Provides actions for {@link LandingPage} page.
+ */
+@Slf4j
+public final class LandingPageActions extends BaseLandingPageActions implements PageAction {
+
+    public LandingPageActions(WebDriverProvider webDriverProvider, String url) {
+        super(new LandingPage(webDriverProvider.getRemoteWebDriver(), url));
+        page = (LandingPage) getPage();
+    }
+
+    private final LandingPage page;
+
+    @Override
+    public boolean isPageReady() {
+        return getPage().isReady();
+    }
+
+    public void openAboutUsPage() {
+        page.getWait().until(ExpectedConditions.elementToBeClickable(page.getAboutUsLinkOnLeftMenu()));
+        page.getAboutUsLinkOnLeftMenu().click();
+    }
+
+    public void openServicesPage(){
+        page.getWait().until(ExpectedConditions.elementToBeClickable(page.getServicesLinkOnLeftMenu()));
+        page.getServicesLinkOnLeftMenu().click();
+    }
+
+    //Actions provided for ATM services elements
+
+    public boolean isAtmServicesTitleDisplayed() {
+        return page.getAtmServicesTitle().isDisplayed();
+    }
+
+    public boolean isWithdrawFundsLinkEnabled() {
+        return page.getWithdrawFundsLink().isEnabled();
+    }
+
+    public boolean isTransferFundsAtmLinkEnabled() {
+        return page.getTransferFundsAtmLink().isEnabled();
+    }
+
+    public boolean isCheckBalancesLinkEnabled() {
+        return page.getCheckBalancesLink().isEnabled();
+    }
+
+    public boolean isMakeDepositsLinkEnabled() {
+        return page.getMakeDepositsLink().isEnabled();
+    }
+
+    //Actions provided for Online Services elements
+
+    public boolean isOnlineServicesTitleDisplayed() {
+        return page.getOnlineServicesTitle().isDisplayed();
+    }
+
+    public boolean isBillPayLinkEnabled() {
+        return page.getBillPayLink().isEnabled();
+    }
+
+    public boolean isAccountHistoryLinkEnabled() {
+        return page.getAccountHistoryLink().isEnabled();
+    }
+
+    public boolean isTransferFundOnlineLinkEnabled() {
+        return page.getTransferFundOnlineLink().isEnabled();
+    }
+
+    //Actions provided for Latest news elements
+
+    public boolean isLatestNewsTitleDisplayed() {
+        return page.getLatestNewsTitle().isDisplayed();
+    }
+
+    public boolean isCurrentDateDisplaed() {
+        return page.getCurrentDate().isDisplayed();
+    }
+
+    public boolean isNews6LinkEnabled() {
+        return page.getNews6Link().isEnabled();
+    }
+
+    public boolean isNews5LinkEnabled() {
+        return page.getNews5Link().isEnabled();
+    }
+
+    public boolean isNews4LinkEnabled() {
+        return page.getNews4Link().isEnabled();
+    }
+
+    public boolean isReadMoreServicesLinkEnabled() {
+        return page.getReadMoreServicesLink().isEnabled();
+    }
+
+    public boolean isReadMoreNewsLinkEnabled() {
+        return page.getReadMoreNewsLink().isEnabled();
+    }
+
+    //For Cucumber
+    @Override
+    public boolean elementByNameIsVisible(String elementName) {
+        return false;
+    }
+}
