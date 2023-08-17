@@ -72,38 +72,7 @@ class SignUpPageTest extends BaseTest {
     }
 }
 
-//  @Order(3)
-//  @ParameterizedTest
-//  @ValueSource(strings = {"UA", "PL", "RU", "EN"})
-//  void shouldChangeLanguageOnSignUpPage(String languageCode) throws Exception {
-//    // Act
-//    signUpActions.changeLanguage(languageCode);
-//
-//    // Assert
-//    assertThat(signUpActions.getSelectedLanguage()).isEqualTo(languageCode);
-//  }
-//
-//  @Order(4)
-//  @ParameterizedTest
-//  @ValueSource(strings = {"FREE", "S", "M"})
-//  void shouldChangeLanguageOnSignInPage(String packageCode) {
-//    // Act
-//    signUpActions.changePackage(packageCode);
-//
-//    // Assert
-//    assertThat(signUpActions.getSelectedPackage()).isEqualTo(packageCode);
-//  }
-//
-//  @Test
-//  @Order(5)
-//  void shouldOpenSignInPage() {
-//    // Act
-//    signUpActions.openSignInPage();
-//
-//    // Assert
-//    signInPageActions.waitUntilSignUpLinkClickable();
-//    assertThat(signInPageActions.isSignUpLinkEnabled()).isTrue();
-//  }
+
 //
 //  @Test
 //  @Order(6)
@@ -116,25 +85,4 @@ class SignUpPageTest extends BaseTest {
 //    assertThat(signUpActions.isSignInLinkEnabled()).isTrue();
 //  }
 //
-//  @Test
-//  @Order(7)
-//  void shouldOpenRestorePasswordPage() {
-//    //Act
-//    signUpActions.openRestorePasswordPage();
-//
-//    //Assert
-//    restorePasswordPageActions.waitUntilSignUpLinkEnabled();
-//    assertThat(restorePasswordPageActions.isSignUpLinkEnabled()).isTrue();
-//  }
-//
-//  @Test
-//  @Order(8)
-//  void shouldReturnToSignUpPageFromRestorePasswordPage() {
-//    //Act
-//    restorePasswordPageActions.returnToSignUpPage();
-//
-//    //Assert
-//    signUpActions.waitUntilSignInLinkClickable();
-//    assertThat(signUpActions.isSignInLinkEnabled()).isTrue();
-//  }
-//}
+
