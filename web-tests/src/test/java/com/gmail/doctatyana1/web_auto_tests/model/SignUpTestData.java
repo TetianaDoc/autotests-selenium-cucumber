@@ -1,14 +1,15 @@
 package com.gmail.doctatyana1.web_auto_tests.model;
 
 import com.gmail.doctatyana1.web_auto_tests.core.Environment;
-import com.gmail.doctatyana1.web_auto_tests.pages.SignUpLandingPage;
+import com.gmail.doctatyana1.web_auto_tests.pages.SignUpPage;
 
 import java.util.Map;
+
 import lombok.Getter;
 import lombok.Setter;
 
 /**
- * Data for {@link SignUpLandingPage} tests.
+ * Data for {@link SignUpPage} tests.
  */
 @Getter
 @Setter

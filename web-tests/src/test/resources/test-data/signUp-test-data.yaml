@@ -1,5 +1,5 @@
 envs:
   PROD:
-    basicUrl: https://parabank.parasoft.com/
-      userOrEmail: Monika
-      password: 123Zxc
+    basicUrl: https://parabank.parasoft.com/parabank/register.htm
+    userOrEmail: Monika
+    password: 123Zxc

@@ -4,7 +4,7 @@ package com.gmail.doctatyana1.web_auto_tests.tests;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.gmail.doctatyana1.web_auto_tests.actions.LandingPageActions;
-import com.gmail.doctatyana1.web_auto_tests.pages.RestorePasswordLandingPage;
+import com.gmail.doctatyana1.web_auto_tests.pages.RestorePasswordPage;
 //import com.gmail.doctatyana1.web_auto_tests.actions.RestorePasswordPageActions;
 //import com.gmail.doctatyana1.web_auto_tests.actions.SignUpPageActions;
 import com.gmail.doctatyana1.web_auto_tests.model.RestorePasswordTestData;
@@ -20,7 +20,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 
 /**
- * Tests for {@link RestorePasswordLandingPage} page.
+ * Tests for {@link RestorePasswordPage} page.
  */
 @TestMethodOrder(OrderAnnotation.class)
 class RestorePasswordPageTest extends BaseTest {
@@ -29,7 +29,7 @@ class RestorePasswordPageTest extends BaseTest {
   private static RestorePasswordTestData restorePasswordTestData;
   private static LandingPageActions landingPageActions;
  // private static SignUpPageActions signUpPageActions;
-  private static RestorePasswordLandingPage restorePasswordPage;
+  private static RestorePasswordPage restorePasswordPage;
   //private static RestorePasswordPageActions restorePasswordPageActions;
 
   @BeforeAll

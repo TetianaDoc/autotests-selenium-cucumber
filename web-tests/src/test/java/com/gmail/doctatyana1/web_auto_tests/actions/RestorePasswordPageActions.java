@@ -6,16 +6,16 @@ package com.gmail.doctatyana1.web_auto_tests.actions;
 //@Slf4j
 //public final class RestorePasswordPageActions extends BasePageActions implements PageAction {
 //
-//  private final RestorePasswordLandingPage page;
+//  private final RestorePasswordPage page;
 //
 //  public RestorePasswordPageActions(WebDriverProvider webDriverProvider, String url) {
-//    super(new RestorePasswordLandingPage(webDriverProvider, url));
-//    page = (RestorePasswordLandingPage) getPage();
+//    super(new RestorePasswordPage(webDriverProvider, url));
+//    page = (RestorePasswordPage) getPage();
 //  }
 //
 //  public RestorePasswordPageActions(WebDriverProvider webDriverProvider) {
-//    super(new RestorePasswordLandingPage(webDriverProvider));
-//    page = (RestorePasswordLandingPage) getPage();
+//    super(new RestorePasswordPage(webDriverProvider));
+//    page = (RestorePasswordPage) getPage();
 //  }
 //
 //  @Override

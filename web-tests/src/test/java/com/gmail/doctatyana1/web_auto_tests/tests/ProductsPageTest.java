@@ -5,13 +5,18 @@ import org.junit.jupiter.api.Test;
 
 public class ProductsPageTest {
     @Test
+
     @Order(1)
     void shouldAcceptCookieOnProductsPage() {
 // Act
-//    signInActions.acceptCookie();
-//
+        //productsPageActions.waitForCookieConsentDisplayed();
+//    productsPageActions.acceptCookie();
+
 //    // Assert
-//    assertThat(signInActions.isCookieConsentDisplayed()).isFalse();
+//    assertThat(productsPageActions.isCookieConsentDisplayed()).isFalse();
 //  }
+
+
+
     }
 }

@@ -1,32 +1,93 @@
 package com.gmail.doctatyana1.web_auto_tests.actions;
 
+import com.gmail.doctatyana1.web_auto_tests.core.WebDriverProvider;
+import com.gmail.doctatyana1.web_auto_tests.pages.SignUpPage;
+import lombok.extern.slf4j.Slf4j;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
 /**
  * Provides actions for {@link SignUpPage}.
  */
-//@Slf4j
-//public final class SignUpPageActions extends BasePageActions implements PageAction {
-//
-//  private final SignUpLandingPage page;
-//
-//  public SignUpPageActions(WebDriverProvider webDriverProvider, String url) {
-//    super(new SignUpLandingPage(webDriverProvider, url));
-//    page=(SignUpLandingPage) getPage();
-//  }
-//
-//  public SignUpPageActions(WebDriverProvider webDriverProvider) {
-//    super(new SignUpLandingPage(webDriverProvider));
-//    page=(SignUpLandingPage) getPage();
-//  }
-//
-//  @Override
-//  public boolean isPageReady() {
-//    return page.isReady();
-//  }
-//
-//  public boolean isRestorePasswordLinkEnabled() {
-//    return page.getRestorePasswordLink().isEnabled();
-//  }
-//
+
+@Slf4j
+public final class SignUpPageActions extends BaseLandingPageActions implements PageAction {
+
+    private final SignUpPage page;
+
+    public SignUpPageActions(WebDriverProvider webDriverProvider, String url) {
+        super(new SignUpPage(webDriverProvider.getRemoteWebDriver(), url));
+        page = (SignUpPage) getPage();
+    }
+
+    public SignUpPageActions(WebDriverProvider webDriverProvider) {
+        super(new SignUpPage(webDriverProvider.getRemoteWebDriver()));
+        page = (SignUpPage) getPage();
+    }
+
+    @Override
+    public boolean isPageReady() {
+        return getPage().isReady();
+    }
+
+    public boolean isSignUpPageTitleDisplayed() {
+        return page.getSignUpPageTitle().isDisplayed();
+    }
+
+    public boolean isFirstNameInputEnabled() {
+        return page.getFirstNameInput().isEnabled();
+    }
+
+    public boolean isLastNameInputEnabled(){
+        return page.getLastNameInput().isEnabled();
+    }
+
+    public boolean isAddressStreetInputEnabled(){
+        return page.getAddressStreetInput().isEnabled();
+    }
+
+    public boolean isAddressCityInputEnabled(){
+        return page.getAddressCityInput().isEnabled();
+    }
+
+    public boolean isAddressStateInputEnabled(){
+        return page.getAddressStateInput().isEnabled();
+    }
+
+    public boolean isAddressZipCodeInputEnabled(){
+        return page.getAddressZipCodeInput().isEnabled();
+    }
+
+    public boolean isPhoneNumberInputEnabled(){
+        return page.getPhoneNumberInput().isEnabled();
+    }
+
+    public boolean isSsnInputEnabled(){
+        return page.getSsnInput().isEnabled();
+    }
+
+    public boolean isUserNameInputEnabled(){
+        return page.getUserNameInput().isEnabled();
+    }
+
+    public boolean isPasswordInputEnabled(){
+        return page.getPasswordInput().isEnabled();
+    }
+
+
+    public boolean isConfirmPasswordInputEnabled(){
+        return page.getConfirmPasswordInput().isEnabled();
+    }
+
+    public boolean isRegisterButtonEnabled(){
+        return page.getRegisterButton().isEnabled();
+    }
+
+    //For Cucumber
+    @Override
+    public boolean elementByNameIsVisible(String elementName) {
+        return false;
+    }
+
 //  public void signUp(String user, String password) {
 //    page.getEmailInput().sendKeys(user);
 //    page.getPasswordInput().sendKeys(password);
@@ -34,26 +95,7 @@ package com.gmail.doctatyana1.web_auto_tests.actions;
 //    page.getSignUpButton().click();
 //  }
 //
-//  public boolean isEyeIconEnabled() {
-//    return page.getEyeIcon().isEnabled();
-//  }
-//
-//  public boolean isSelectedPackageButtonEnabled() {
-//    return page.getSelectedPackage().isEnabled();
-//  }
-//
-//  public boolean isSignInLinkEnabled() {
-//    return page.getSignInLink().isEnabled();
-//  }
-//
-//  public boolean isFirstNameInputEnabled() {
-//    return page.getFirstnameInput().isEnabled();
-//  }
-//
-//  public boolean isRecaptchaDisplayed() {
-//    return page.getRecaptcha().isDisplayed();
-//  }
-//
+
 //  public void waitUntilSignInLinkClickable() {
 //    page.getWait().until(ExpectedConditions.elementToBeClickable(page.getSignInLink()));
 //  }
@@ -73,26 +115,14 @@ package com.gmail.doctatyana1.web_auto_tests.actions;
 //    page.getRestorePasswordLink().click();
 //  }
 //
-//  public void changePackage(String packageCode) {
-//    page.getSelectedPackage().click();
-//    page.getWait().until(visibilityOf(page.getListOfPackages()));
-//    page.getPackages().stream().filter(e -> e.getAttribute("data-value").equals(packageCode))
-//        .findFirst()
-//        .orElseThrow(IllegalStateException::new)
-//        .click();
-//    page.getWait().until(visibilityOf(page.getSelectedPackage()));
-//  }
-//
-//  public String getSelectedPackage() {
-//    return page.getSelectedPackageInput().getAttribute("value");
-//  }
-//
+
+
 //  public void waitUntilRestorePasswordLinkEnabled() {
 //    page.getWait().until(ExpectedConditions.elementToBeClickable(page.getRestorePasswordLink()));
 //  }
 //
-//  public void returnToRestorePasswordPage() {
+//  public void goToRestorePasswordPage() {
 //    page.getWait().until(ExpectedConditions.elementToBeClickable(page.getRestorePasswordLink()));
 //    page.getRestorePasswordLink().click();
 //  }
-//}
+}

@@ -11,15 +11,15 @@ import org.openqa.selenium.support.FindBy;
  * Restore Password page for restore password.
  */
 @Getter
-public final class RestorePasswordLandingPage extends BaseLandingPage {
+public final class RestorePasswordPage extends BaseLandingPage {
 
-  public RestorePasswordLandingPage(WebDriverProvider webDriverProvider, String url) {
+  public RestorePasswordPage(WebDriverProvider webDriverProvider, String url) {
     super(webDriverProvider.getRemoteWebDriver(), url);
     load();
     isLoaded();
   }
 
-  public RestorePasswordLandingPage(WebDriverProvider webDriverProvider) {
+  public RestorePasswordPage(WebDriverProvider webDriverProvider) {
     super(webDriverProvider.getRemoteWebDriver());
   }
 
