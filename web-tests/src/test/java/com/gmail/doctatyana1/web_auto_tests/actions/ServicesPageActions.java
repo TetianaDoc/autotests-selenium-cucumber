@@ -15,6 +15,11 @@ public class ServicesPageActions extends BaseLandingPageActions implements PageA
         page = (ServicesPage) getPage();
     }
 
+    public ServicesPageActions(WebDriverProvider webDriverProvider, String url) {
+        super(new ServicesPage(webDriverProvider.getRemoteWebDriver(), url));
+        page = (ServicesPage) getPage();
+    }
+
     public boolean isServicesTitleDisplayed() {
         return page.getServicesTitle().isDisplayed();
     }

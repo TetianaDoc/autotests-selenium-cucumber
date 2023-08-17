@@ -1,14 +1,10 @@
 package com.gmail.doctatyana1.web_auto_tests.tests;
-
 import com.gmail.doctatyana1.web_auto_tests.actions.AboutUsPageActions;
-import com.gmail.doctatyana1.web_auto_tests.actions.LandingPageActions;
 import com.gmail.doctatyana1.web_auto_tests.model.AboutUsTestData;
 import com.gmail.doctatyana1.web_auto_tests.pages.AboutUsPage;
 import org.junit.jupiter.api.*;
-
 import java.io.File;
 import java.io.IOException;
-
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
@@ -40,7 +36,6 @@ public class AboutUsPageTest extends BaseTest {
     @Test
     @Order(1)
     void shouldProperlyDisplayedAllElementsOnAboutUsPage() {
-        //Act
         //Assert
         assertThat(aboutUsPageActions.isPageReady()).isTrue();
         assertThat(aboutUsPageActions.isInfoTitleDisplayed()).isTrue();

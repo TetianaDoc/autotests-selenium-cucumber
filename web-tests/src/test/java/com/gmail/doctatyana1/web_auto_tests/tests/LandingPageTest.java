@@ -1,5 +1,4 @@
 package com.gmail.doctatyana1.web_auto_tests.tests;
-
 import com.gmail.doctatyana1.web_auto_tests.actions.AboutUsPageActions;
 import com.gmail.doctatyana1.web_auto_tests.actions.LandingPageActions;
 import com.gmail.doctatyana1.web_auto_tests.actions.ServicesPageActions;
@@ -8,14 +7,12 @@ import com.gmail.doctatyana1.web_auto_tests.model.SignInTestData;
 import com.gmail.doctatyana1.web_auto_tests.model.SignInTestData.SignInTestDataByEnv;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
-
 import java.io.File;
 import java.io.IOException;
-
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * Tests for {@link LandingPage} page including sign in.
+ * Tests for {@link LandingPage} including sign in.
  */
 @TestMethodOrder(OrderAnnotation.class)
 class LandingPageTest extends BaseTest {
@@ -25,7 +22,6 @@ class LandingPageTest extends BaseTest {
     private static LandingPageActions landingPageActions;
     private static AboutUsPageActions aboutUsPageActions;
     private static ServicesPageActions servicesPageActions;
-    //private static RestorePasswordPageActions restorePasswordPageActions;
 
     @BeforeAll
     static void beforeAll() throws IOException {
@@ -36,8 +32,6 @@ class LandingPageTest extends BaseTest {
         landingPageActions = new LandingPageActions(provider, signInTestData.getBasicUrl());
         aboutUsPageActions = new AboutUsPageActions(provider);
         servicesPageActions = new ServicesPageActions(provider);
-        //signUpPageActions = new SignUpPageActions(provider);
-        // restorePasswordPageActions = new RestorePasswordPageActions(provider);
     }
 
     @AfterAll

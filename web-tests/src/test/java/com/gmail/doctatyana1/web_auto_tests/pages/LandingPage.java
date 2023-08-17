@@ -1,14 +1,10 @@
 package com.gmail.doctatyana1.web_auto_tests.pages;
-
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfAllElements;
-
 import lombok.Getter;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-
-import java.util.List;
 
 /**
  * Landing (home and login) page.

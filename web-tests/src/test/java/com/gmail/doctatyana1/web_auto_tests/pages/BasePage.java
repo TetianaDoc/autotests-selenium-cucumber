@@ -1,8 +1,6 @@
 package com.gmail.doctatyana1.web_auto_tests.pages;
-
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Strings.isNullOrEmpty;
-
 import java.time.Duration;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.WebDriver;

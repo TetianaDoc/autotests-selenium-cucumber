@@ -1,6 +1,4 @@
 package com.gmail.doctatyana1.web_auto_tests.actions;
-
-import com.fasterxml.jackson.databind.ser.Serializers;
 import com.gmail.doctatyana1.web_auto_tests.pages.BaseLandingPage;
 import lombok.Getter;
 

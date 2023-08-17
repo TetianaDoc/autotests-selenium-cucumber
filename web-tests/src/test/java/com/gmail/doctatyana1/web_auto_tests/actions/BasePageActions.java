@@ -1,5 +1,4 @@
 package com.gmail.doctatyana1.web_auto_tests.actions;
-
 import com.gmail.doctatyana1.web_auto_tests.pages.BasePage;
 import lombok.Getter;
 import org.openqa.selenium.By;

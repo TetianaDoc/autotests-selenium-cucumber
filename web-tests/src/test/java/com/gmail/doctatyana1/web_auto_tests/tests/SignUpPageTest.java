@@ -1,18 +1,11 @@
 package com.gmail.doctatyana1.web_auto_tests.tests;
-
-
 import static org.assertj.core.api.Assertions.assertThat;
-
-import com.gmail.doctatyana1.web_auto_tests.actions.LandingPageActions;
 import com.gmail.doctatyana1.web_auto_tests.pages.SignUpPage;
-//import com.gmail.doctatyana1.web_auto_tests.actions.RestorePasswordPageActions;
 import com.gmail.doctatyana1.web_auto_tests.actions.SignUpPageActions;
 import com.gmail.doctatyana1.web_auto_tests.model.SignUpTestData;
 import com.gmail.doctatyana1.web_auto_tests.model.SignUpTestData.SignUpTestDataByEnv;
-
 import java.io.File;
 import java.io.IOException;
-
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
@@ -21,7 +14,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 
 /**
- * Tests for {@link SignUpPage} page.
+ * Tests for {@link SignUpPage}.
  */
 
 @TestMethodOrder(OrderAnnotation.class)
@@ -29,10 +22,7 @@ class SignUpPageTest extends BaseTest {
 
     private static final String TEST_DATA = "src/test/resources/test-data/signUp-test-data.yaml";
     private static SignUpTestData signUpTestData;
-    private static LandingPageActions landingPageActions;
     private static SignUpPageActions signUpActions;
-    // private static RestorePasswordPageActions restorePasswordPageActions;
-
 
     @BeforeAll
     static void beforeAll() throws IOException {
@@ -41,8 +31,6 @@ class SignUpPageTest extends BaseTest {
                 readTestData(new File(TEST_DATA), SignUpTestDataByEnv.class);
         signUpTestData = signUpTestDataByEnv.getEnvs().get(getEnvironment());
         signUpActions = new SignUpPageActions(provider, signUpTestData.getBasicUrl());
-//        landingPageActions = new LandingPageActions(provider, signUpTestData.getBasicUrl());
-        // restorePasswordPageActions = new RestorePasswordPageActions(provider);
     }
 
     @AfterAll
@@ -53,7 +41,6 @@ class SignUpPageTest extends BaseTest {
     @Test
     @Order(1)
     void shouldProperDisplayAllElementsOnSignUpPage() {
-        // Act
         //Assert
         assertThat(signUpActions.isPageReady()).isTrue();
         assertThat(signUpActions.isSignUpPageTitleDisplayed()).isTrue();
@@ -70,19 +57,26 @@ class SignUpPageTest extends BaseTest {
         assertThat(signUpActions.isConfirmPasswordInputEnabled()).isTrue();
         assertThat(signUpActions.isRegisterButtonEnabled()).isTrue();
     }
+
+    @Test
+    @Order(2)
+    void shouldRegisterUserAndOpenDashboardHomePage() throws Exception {
+        // Act
+        signUpActions.signUp(signUpTestData.getFirstName(),
+                signUpTestData.getLastName(),
+                signUpTestData.getAddress(),
+                signUpTestData.getCity(),
+                signUpTestData.getState(),
+                signUpTestData.getZipCode(),
+                signUpTestData.getPhone(),
+                signUpTestData.getSsn(),
+                signUpTestData.getUsername(),
+                signUpTestData.getPassword(),
+                signUpTestData.getConfirm());
+
+        // Assert
+        assertThat(signUpActions.isPageReady()).isTrue();
+    }
 }
 
-
-//
-//  @Test
-//  @Order(6)
-//  void shouldReturnToSignUpPage() {
-//    //Act
-//    signInPageActions.returnToSignUpPage();
-//
-//    //Assert
-//    signUpActions.waitUntilSignInLinkClickable();
-//    assertThat(signUpActions.isSignInLinkEnabled()).isTrue();
-//  }
-//
 
