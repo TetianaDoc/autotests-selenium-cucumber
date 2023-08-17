@@ -1,9 +1,7 @@
 package com.gmail.doctatyana1.web_auto_tests.actions;
-
 import com.gmail.doctatyana1.web_auto_tests.core.WebDriverProvider;
 import com.gmail.doctatyana1.web_auto_tests.pages.SignUpPage;
 import lombok.extern.slf4j.Slf4j;
-import org.openqa.selenium.remote.RemoteWebDriver;
 
 /**
  * Provides actions for {@link SignUpPage}.
@@ -16,11 +14,6 @@ public final class SignUpPageActions extends BaseLandingPageActions implements P
 
     public SignUpPageActions(WebDriverProvider webDriverProvider, String url) {
         super(new SignUpPage(webDriverProvider.getRemoteWebDriver(), url));
-        page = (SignUpPage) getPage();
-    }
-
-    public SignUpPageActions(WebDriverProvider webDriverProvider) {
-        super(new SignUpPage(webDriverProvider.getRemoteWebDriver()));
         page = (SignUpPage) getPage();
     }
 
@@ -88,41 +81,21 @@ public final class SignUpPageActions extends BaseLandingPageActions implements P
         return false;
     }
 
-//  public void signUp(String user, String password) {
-//    page.getEmailInput().sendKeys(user);
-//    page.getPasswordInput().sendKeys(password);
-//    page.getConfirmPasswordInput().sendKeys(password);
-//    page.getSignUpButton().click();
-//  }
-//
-
-//  public void waitUntilSignInLinkClickable() {
-//    page.getWait().until(ExpectedConditions.elementToBeClickable(page.getSignInLink()));
-//  }
-//
-//  public void returnToSignInPage() {
-//    page.getWait().until(ExpectedConditions.elementToBeClickable(page.getSignInLink()));
-//    page.getSignInLink().click();
-//  }
-//
-//  public void openSignInPage() {
-//    page.getWait().until(ExpectedConditions.elementToBeClickable(page.getSignInLink()));
-//    page.getSignInLink().click();
-//  }
-//
-//  public void openRestorePasswordPage() {
-//    page.getWait().until(ExpectedConditions.elementToBeClickable(page.getRestorePasswordLink()));
-//    page.getRestorePasswordLink().click();
-//  }
-//
-
-
-//  public void waitUntilRestorePasswordLinkEnabled() {
-//    page.getWait().until(ExpectedConditions.elementToBeClickable(page.getRestorePasswordLink()));
-//  }
-//
-//  public void goToRestorePasswordPage() {
-//    page.getWait().until(ExpectedConditions.elementToBeClickable(page.getRestorePasswordLink()));
-//    page.getRestorePasswordLink().click();
-//  }
+    //Actions provided for SignUp
+  public void signUp(String firstName, String lastName, String address, String city,
+                     String state, String zipCode, String phone, String ssn,
+                     String username, String password, String confirm) {
+    page.getFirstNameInput().sendKeys(firstName);
+    page.getLastNameInput().sendKeys(lastName);
+    page.getAddressStreetInput().sendKeys(address);
+    page.getAddressCityInput().sendKeys(city);
+    page.getAddressStateInput().sendKeys(state);
+    page.getAddressZipCodeInput().sendKeys(zipCode);
+    page.getPhoneNumberInput().sendKeys(phone);
+    page.getSsnInput().sendKeys(ssn);
+    page.getUserNameInput().sendKeys(username);
+    page.getPasswordInput().sendKeys(password);
+    page.getConfirmPasswordInput().sendKeys(confirm);
+    page.getRegisterButton().click();
+  }
 }

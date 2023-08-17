@@ -1,9 +1,12 @@
 package com.gmail.doctatyana1.web_auto_tests.pages;
-
 import lombok.Getter;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.FindBy;
+
+/**
+ * Services page
+ */
 
 @Getter
 public class ServicesPage extends BaseLandingPage {

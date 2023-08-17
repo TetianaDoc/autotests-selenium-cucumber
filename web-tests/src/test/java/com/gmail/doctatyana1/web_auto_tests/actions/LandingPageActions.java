@@ -1,5 +1,4 @@
 package com.gmail.doctatyana1.web_auto_tests.actions;
-
 import com.gmail.doctatyana1.web_auto_tests.pages.LandingPage;
 import com.gmail.doctatyana1.web_auto_tests.core.WebDriverProvider;
 import lombok.extern.slf4j.Slf4j;

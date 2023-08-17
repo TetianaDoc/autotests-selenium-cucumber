@@ -1,5 +1,14 @@
 envs:
   PROD:
     basicUrl: https://parabank.parasoft.com/parabank/register.htm
-    userOrEmail: Monika
+    firstName: Monika
+    lastName: Brown
+    address: Long street
+    city: London
+    state: California
+    zipCode: 12345
+    phone: 987654
+    ssn: 222222
+    username: MonikaTest
     password: 123Zxc
+    confirm: 123Zxc

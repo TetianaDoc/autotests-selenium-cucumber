@@ -1,7 +1,6 @@
 package com.gmail.doctatyana1.web_auto_tests.pages;
 import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
 import com.gmail.doctatyana1.web_auto_tests.core.WebDriverProvider;
-import java.util.List;
 import lombok.Getter;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -19,9 +18,6 @@ public final class SignUpPage extends BaseLandingPage {
         load();
         isLoaded();
     }
-    public SignUpPage(RemoteWebDriver remoteWebDriver){
-        super(remoteWebDriver);
-    }
 
     @Override
     public void isLoaded() throws Error {
@@ -31,7 +27,7 @@ public final class SignUpPage extends BaseLandingPage {
 
     @Override
     public boolean isReady() {
-        return firstNameInput.isEnabled();
+        return logoImgHomeLink.isEnabled();
     }
 
     @FindBy(xpath = "//div/h1[text()='Signing up is easy!']")

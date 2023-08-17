@@ -6,7 +6,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.FindBy;
 
 /**
- * Base landing page for pages {@link LandingPage}, {@link SignUpPage}, {@link RestorePasswordPage}.
+ * Base landing page for pages {@link LandingPage}, {@link SignUpPage}, {@link AboutUsPage}, {@link ServicesPage}.
  */
 
 @Getter

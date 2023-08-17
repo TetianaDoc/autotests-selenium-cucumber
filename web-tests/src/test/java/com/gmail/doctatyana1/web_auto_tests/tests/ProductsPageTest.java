@@ -3,6 +3,10 @@ package com.gmail.doctatyana1.web_auto_tests.tests;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 
+/**
+ * Tests for {@link }
+ */
+
 public class ProductsPageTest {
     @Test
 
@@ -15,8 +19,6 @@ public class ProductsPageTest {
 //    // Assert
 //    assertThat(productsPageActions.isCookieConsentDisplayed()).isFalse();
 //  }
-
-
 
     }
 }
