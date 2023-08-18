@@ -11,6 +11,6 @@ import lombok.Setter;
 public abstract class BaseTestData {
 
   private String basicUrl;
-  private String userOrEmail;
+  private String username;
   private String password;
 }

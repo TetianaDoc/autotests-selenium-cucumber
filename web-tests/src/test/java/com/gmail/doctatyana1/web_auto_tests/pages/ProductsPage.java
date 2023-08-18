@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfAllElements;
 
 @Getter
@@ -38,5 +40,15 @@ public class ProductsPage extends BaseLandingPage {
 
     @FindBy(xpath = "//p[@class='h6' and text()='PARASOFT HEADQUARTERS']")
     private WebElement headquartersTitle;
+
+    @FindBy(css="select[aria-label='Select Language']")
+    private WebElement selectLanguageMenu;
+
+    @FindBy(css=".gt_selector option[selected]")
+    private WebElement selectedLanguage;
+
+    @FindBy(css = "  option[value]")
+    private List<WebElement> languagesList;
+
 }
 

@@ -22,6 +22,11 @@ public final class LandingPageActions extends BaseLandingPageActions implements 
         return getPage().isReady();
     }
 
+    public void logIn(String username, String password){
+        page.getUsernameInput().sendKeys(username);
+        page.getPasswordInput().sendKeys(password);
+    }
+
     public void openAboutUsPage() {
         page.getWait().until(ExpectedConditions.elementToBeClickable(page.getAboutUsLinkOnLeftMenu()));
         page.getAboutUsLinkOnLeftMenu().click();
