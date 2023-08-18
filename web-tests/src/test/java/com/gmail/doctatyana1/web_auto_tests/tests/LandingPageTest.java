@@ -1,4 +1,5 @@
 package com.gmail.doctatyana1.web_auto_tests.tests;
+
 import com.gmail.doctatyana1.web_auto_tests.actions.AboutUsPageActions;
 import com.gmail.doctatyana1.web_auto_tests.actions.LandingPageActions;
 import com.gmail.doctatyana1.web_auto_tests.actions.ServicesPageActions;
@@ -7,15 +8,16 @@ import com.gmail.doctatyana1.web_auto_tests.model.SignInTestData;
 import com.gmail.doctatyana1.web_auto_tests.model.SignInTestData.SignInTestDataByEnv;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
+
 import java.io.File;
 import java.io.IOException;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * Tests for {@link LandingPage} including sign in.
  */
 @TestMethodOrder(OrderAnnotation.class)
-
 class LandingPageTest extends BaseTest {
 
     private static final String TEST_DATA = "src/test/resources/test-data/signIn-test-data.yaml";
@@ -114,66 +116,16 @@ class LandingPageTest extends BaseTest {
         assertThat(servicesPageActions.isServicesTitleDisplayed()).isTrue();
     }
 
-    //@Test
-//  @Order(8)
-//  @Disabled
-//  void shouldLogonUserAndOpenDashboardHomePage() throws Exception {
-//    // Act
-//    signInActions.signIn(signInTestData.getUserOrEmail(), decrypt(signInTestData.getPassword()));
-//
-//    // Assert
-//    assertThat(dashboardPageActions.isPageReady()).isTrue();
-//    assertThat(dashboardPageActions.isHeaderLogoImageDisplayed()).isTrue();
+    @Test
+    @Order(4)
+    void shouldLoginUser() throws Exception {
+        // Act
+        landingPageActions.logIn(signInTestData.getUsername(), signInTestData.getPassword());
 
-//  @Test
-//  @Order(4)
-//  @Disabled
-//  void shouldOpenSignUpPage() {
-//    // Act
-//    signInActions.openSignUpPage();
-//
-//    // Assert
-//    signUpPageActions.waitUntilSignInLinkClickable();
-//    assertThat(signUpPageActions.isSelectedPackageButtonEnabled()).isTrue();
-//  }
-
-//  @Test
-//  @Order(5)
-//  @Disabled
-//  void shouldReturnToSignInPage() {
-//    //Act
-//    signUpPageActions.returnToSignInPage();
-//
-//    //Assert
-//    signInActions.waitUntilSignUpLinkClickable();
-//    assertThat(signInActions.isSignUpLinkEnabled()).isTrue();
-//  }
-
-//  @Test
-//  @Order(6)
-//  @Disabled
-//  void shouldOpenRestorePasswordPage() {
-//    // Act
-//    signInActions.openRestorePasswordPage();
-//
-//    // Assert
-//    restorePasswordPageActions.waitUntilSignInLinkEnabled();
-//    assertThat(restorePasswordPageActions.isSignInLinkEnabled()).isTrue();
-//  }
-
-//  @Test
-//  @Order(7)
-//  @Disabled
-//  void shouldReturnToSignInPageFromRestorePasswordPage() {
-//    //Act
-//    restorePasswordPageActions.returnToSignInPage();
-//
-//    //Assert
-//    signInActions.waitUntilSignUpLinkClickable();
-//    assertThat(signInActions.isSignUpLinkEnabled()).isTrue();
-//  }
-
-//
+        // Assert
+        assertThat(landingPageActions.isPageReady()).isTrue();
+        assertThat(landingPageActions.isLogoImgHomeLinkEnabled()).isTrue();
+    }
 }
 
 

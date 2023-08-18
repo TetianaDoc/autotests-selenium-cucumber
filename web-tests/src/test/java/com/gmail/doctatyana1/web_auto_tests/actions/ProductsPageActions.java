@@ -2,7 +2,10 @@ package com.gmail.doctatyana1.web_auto_tests.actions;
 
 import com.gmail.doctatyana1.web_auto_tests.core.WebDriverProvider;
 import com.gmail.doctatyana1.web_auto_tests.pages.ProductsPage;
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+
+import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
 
 public class ProductsPageActions extends BaseLandingPageActions implements PageAction {
 
@@ -36,20 +39,38 @@ public class ProductsPageActions extends BaseLandingPageActions implements PageA
         return page.getCookieConsent().isDisplayed();
     }
 
-    public boolean isQuickLinksTitleDisplayed(){
+    public boolean isQuickLinksTitleDisplayed() {
         return page.getQuickLinksTitle().isDisplayed();
     }
 
-    public boolean isHeadquartersTitleDisplayed(){
+    public boolean isHeadquartersTitleDisplayed() {
         return page.getHeadquartersTitle().isDisplayed();
     }
 
-    public void waitForCookieConsentDisplayed(){
-         page.getWait().until(ExpectedConditions.elementToBeClickable(page.getCookieConsent()));
+    public boolean isSelectLanguageMenuEnabled() {
+        return page.getSelectLanguageMenu().isEnabled();
     }
 
-    public void acceptCookie(){
+    public void waitForCookieConsentDisplayed() {
+        page.getWait().until(ExpectedConditions.elementToBeClickable(page.getCookieConsent()));
+    }
+
+    public void acceptCookie() {
         page.getCookieConsent().click();
+    }
+
+    public void changeLanguage(String languageCode) {
+        page.getSelectLanguageMenu().click();
+        page.getWait().until(visibilityOf(page.getSelectLanguageMenu()));
+        page.getLanguagesList().stream().filter(e -> e.getText().equals(languageCode))
+                .findFirst()
+                .orElseThrow(IllegalStateException::new)
+                .click();
+        page.getWait().until(visibilityOf(page.getSelectLanguageMenu()));
+    }
+
+    public String getSelectedLanguage() {
+        return page.getSelectedLanguage().getText();
     }
 
 }

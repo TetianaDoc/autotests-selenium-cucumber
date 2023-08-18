@@ -16,7 +16,6 @@ import lombok.Setter;
 public class SignUpTestData extends BaseTestData {
 
   private String basicUrl;
-  //private String userOrEmail;
   private String firstName;
   private String lastName;
   private String address;

@@ -4,6 +4,8 @@ import com.gmail.doctatyana1.web_auto_tests.actions.ProductsPageActions;
 import com.gmail.doctatyana1.web_auto_tests.model.ProductsTestData;
 import com.gmail.doctatyana1.web_auto_tests.pages.ProductsPage;
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import java.io.File;
 import java.io.IOException;
@@ -45,6 +47,7 @@ public class ProductsPageTest extends BaseTest {
         assertThat(productsPageActions.isCookieConsentDisplayed()).isTrue();
         assertThat(productsPageActions.isQuickLinksTitleDisplayed()).isTrue();
         assertThat(productsPageActions.isHeadquartersTitleDisplayed()).isTrue();
+        assertThat(productsPageActions.isSelectLanguageMenuEnabled()).isTrue();
     }
 
     @Test
@@ -56,6 +59,17 @@ public class ProductsPageTest extends BaseTest {
 
         // Assert
         assertThat(productsPageActions.isCookieConsentDisplayed()).isFalse();
+    }
+
+    @ParameterizedTest
+    @Order(3)
+    @ValueSource(strings = {"English", "Français", "Deutsch", "Español"})
+    void shouldChangeLanguageOnSignInPage(String languageCode) {
+        // Act
+        productsPageActions.changeLanguage(languageCode);
+
+        // Assert
+        assertThat(productsPageActions.getSelectedLanguage()).isEqualTo(languageCode);
     }
 
 }
