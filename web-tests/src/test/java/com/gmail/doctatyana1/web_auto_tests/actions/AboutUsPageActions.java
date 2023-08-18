@@ -25,7 +25,7 @@ public class AboutUsPageActions extends BaseLandingPageActions implements PageAc
     }
 
     public boolean isInfoTitleDisplayed() {
-        return page.getInfoTitle().isEnabled();
+        return page.getInfoTitle().isDisplayed();
     }
 
     @Override
