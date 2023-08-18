@@ -29,5 +29,14 @@ public class ProductsPage extends BaseLandingPage {
 
     @FindBy(xpath = "//div/h1[text()='Innovative and Intelligent Software Testing Platform']")
     private WebElement productsPageTitle;
+
+    @FindBy(css = "a[id=\"hs-eu-confirmation-button\"]")
+    private WebElement cookieConsent;
+
+    @FindBy(xpath = "//p[@class=\"h6\" and text()='Quick links']")
+    private WebElement quickLinksTitle;
+
+    @FindBy(xpath = "//p[@class='h6' and text()='PARASOFT HEADQUARTERS']")
+    private WebElement headquartersTitle;
 }
 
