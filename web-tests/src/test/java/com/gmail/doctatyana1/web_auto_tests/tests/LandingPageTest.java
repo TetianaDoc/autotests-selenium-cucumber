@@ -15,6 +15,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Tests for {@link LandingPage} including sign in.
  */
 @TestMethodOrder(OrderAnnotation.class)
+
 class LandingPageTest extends BaseTest {
 
     private static final String TEST_DATA = "src/test/resources/test-data/signIn-test-data.yaml";

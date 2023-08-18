@@ -18,6 +18,7 @@ import org.junit.jupiter.api.TestMethodOrder;
  */
 
 @TestMethodOrder(OrderAnnotation.class)
+
 class SignUpPageTest extends BaseTest {
 
     private static final String TEST_DATA = "src/test/resources/test-data/signUp-test-data.yaml";
