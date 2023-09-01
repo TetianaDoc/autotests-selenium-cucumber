@@ -77,7 +77,7 @@ public final class SignUpPageActions extends BaseLandingPageActions implements P
 
     //For Cucumber
     @Override
-    public boolean elementByNameIsVisible(String elementName) {
+    public boolean elementByNameIsDisplayed(String elementName) {
         return false;
     }
 

@@ -27,7 +27,7 @@ public final class WebDriverProvider {
   private static final File MAC_CHROME_DRIVER = new File(
       "../autotests-core/src/main/resources/web/drivers/mac/chromedriver");
   private static final File MAC_FIREFOX_DRIVER = new File(
-      "../autotests-core/src/main/resources/web/drivers/mac/chromedriver");
+      "../autotests-core/src/main/resources/web/drivers/mac/geckodriver");
 
   private final RemoteWebDriver remoteWebDriver;
 
@@ -55,7 +55,7 @@ public final class WebDriverProvider {
       case IE:
         return startInternetExplore();
       case FIREFOX:
-        System.setProperty("webdriver.geckodriver.driver", getPathToFirefoxDriver());
+        System.setProperty("webdriver.gecko.driver", getPathToFirefoxDriver());
         return startFirefox();
       case SAFARI:
         return startSafari();

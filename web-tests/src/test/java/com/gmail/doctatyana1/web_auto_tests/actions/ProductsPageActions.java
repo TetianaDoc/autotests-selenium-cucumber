@@ -22,7 +22,7 @@ public class ProductsPageActions extends BaseLandingPageActions implements PageA
     }
 
     @Override
-    public boolean elementByNameIsVisible(String elementName) {
+    public boolean elementByNameIsDisplayed(String elementName) {
         return false;
     }
 

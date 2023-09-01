@@ -1,15 +1,12 @@
 package com.gmail.doctatyana1.web_auto_tests.tests;
-
 import com.gmail.doctatyana1.web_auto_tests.actions.ProductsPageActions;
 import com.gmail.doctatyana1.web_auto_tests.model.ProductsTestData;
 import com.gmail.doctatyana1.web_auto_tests.pages.ProductsPage;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
-
 import java.io.File;
 import java.io.IOException;
-
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**

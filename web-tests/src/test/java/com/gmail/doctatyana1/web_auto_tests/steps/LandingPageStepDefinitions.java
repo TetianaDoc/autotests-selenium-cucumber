@@ -5,6 +5,7 @@ import com.gmail.doctatyana1.web_auto_tests.model.SignInTestData;
 import com.gmail.doctatyana1.web_auto_tests.tests.BaseTest;
 import io.cucumber.java.AfterAll;
 import io.cucumber.java.BeforeAll;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -29,18 +30,22 @@ public class LandingPageStepDefinitions extends BaseTest {
         landingPageActions = new LandingPageActions(provider, signInTestData.getBasicUrl());
     }
 
+    @AfterAll
+    public static void afterAll() {
+        landingPageActions.tearDown();
+    }
     @When("the landing page is open")
     public void theLandingPageIsOpen() {
         assertThat(landingPageActions.isPageReady()).isTrue();
     }
 
-    @Then("{} is visible")
-    public void isVisible(String elementName) {
-        assertThat(landingPageActions.elementByNameIsVisible(elementName)).isTrue();
+    @Then("{string} is visible")
+    public void isVisible(String elementByName) {
+        assertThat(landingPageActions.elementByNameIsDisplayed(elementByName)).isTrue();
     }
 
-    @AfterAll
-    public static void afterAll() {
-        landingPageActions.tearDown();
+    @And("{string} is enabled")
+    public void isEnabled(String elementByInputType) {
+        assertThat(landingPageActions.elementByInputTypeIsEnabled(elementByInputType)).isTrue();
     }
 }
