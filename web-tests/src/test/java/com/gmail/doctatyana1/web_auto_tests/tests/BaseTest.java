@@ -23,7 +23,7 @@ import lombok.extern.slf4j.Slf4j;
 public abstract class BaseTest {
 
   protected static final Environment DEFAULT_ENVIRONMENT = Environment.PROD;
-  protected static final Browser DEFAULT_BROWSER = Browser.CHROME;
+  protected static final Browser DEFAULT_BROWSER = Browser.FIREFOX;
 
   private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper(new YAMLFactory());
 

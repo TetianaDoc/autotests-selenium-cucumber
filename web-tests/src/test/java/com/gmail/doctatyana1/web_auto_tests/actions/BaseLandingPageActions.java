@@ -129,9 +129,5 @@ public abstract class BaseLandingPageActions extends BasePageActions {
     }
 
     //For Cucumber
-    public abstract boolean elementByNameIsVisible(String elementName);
-
-    public void tearDown() {
-
-    }
+    public abstract boolean elementByNameIsDisplayed(String elementName);
 }

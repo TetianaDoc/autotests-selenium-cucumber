@@ -35,7 +35,7 @@ public class AboutUsPageActions extends BaseLandingPageActions implements PageAc
 
     //For Cucumber
     @Override
-    public boolean elementByNameIsVisible(String elementName) {
+    public boolean elementByNameIsDisplayed(String elementName) {
         return false;
     }
 

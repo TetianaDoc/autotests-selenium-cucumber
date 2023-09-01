@@ -12,7 +12,7 @@ public abstract class BasePageActions implements PageAction {
         this.page = page;
     }
 
-    public boolean elementByNameIsVisible(String elementName) {
+    public boolean elementByNameIsDisplayed(String elementName) {
         return page.getDriver()
                 .findElement(By.xpath(String.format("//*[text()=%s]", elementName)))
                 .isDisplayed();

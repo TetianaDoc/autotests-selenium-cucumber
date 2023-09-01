@@ -2,7 +2,10 @@ package com.gmail.doctatyana1.web_auto_tests.actions;
 import com.gmail.doctatyana1.web_auto_tests.pages.LandingPage;
 import com.gmail.doctatyana1.web_auto_tests.core.WebDriverProvider;
 import lombok.extern.slf4j.Slf4j;
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+
+import static java.lang.String.format;
 
 /**
  * Provides actions for {@link LandingPage} page.
@@ -108,8 +111,16 @@ public final class LandingPageActions extends BaseLandingPageActions implements 
     }
 
     //For Cucumber
+    private static final String PAGE_TITLE_PATTERN = "//*[contains(text(),'%s')]";
+
     @Override
-    public boolean elementByNameIsVisible(String elementName) {
-        return false;
+    public boolean elementByNameIsDisplayed(String elementByName) {
+        return getPage().getDriver().findElement(By.xpath(format(PAGE_TITLE_PATTERN, elementByName))).isDisplayed();
+    }
+
+    private static final String INPUT_TYPE_PATTERN = "input[type='%s']";
+
+    public boolean elementByInputTypeIsEnabled(String elementByInputType){
+        return getPage().getDriver().findElement(By.cssSelector(format(INPUT_TYPE_PATTERN, elementByInputType))).isEnabled();
     }
 }
