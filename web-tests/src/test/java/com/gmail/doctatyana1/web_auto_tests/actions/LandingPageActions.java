@@ -28,6 +28,7 @@ public final class LandingPageActions extends BaseLandingPageActions implements 
     public void logIn(String username, String password){
         page.getUsernameInput().sendKeys(username);
         page.getPasswordInput().sendKeys(password);
+        page.getLogInButton().click();
     }
 
     public void openAboutUsPage() {

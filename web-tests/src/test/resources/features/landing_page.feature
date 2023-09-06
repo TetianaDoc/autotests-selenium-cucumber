@@ -46,3 +46,15 @@ Feature: Landing page
       | "password"         |
       | "submit"           |
       | "text"             |
+
+  Scenario: The AboutUs page should open
+    When click on About us link
+    Then info title on About Us page is displayed
+
+  Scenario: The Services page should open
+    When click on Services link
+    Then services title on Services page is displayed
+
+  Scenario: User should Login
+    When input username, password and click button log in
+    Then LogoImgHomeLink is Enabled
