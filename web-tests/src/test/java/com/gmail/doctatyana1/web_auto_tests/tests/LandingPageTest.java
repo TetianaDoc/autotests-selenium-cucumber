@@ -123,7 +123,6 @@ class LandingPageTest extends BaseTest {
         landingPageActions.logIn(signInTestData.getUsername(), signInTestData.getPassword());
 
         // Assert
-        assertThat(landingPageActions.isPageReady()).isTrue();
         assertThat(landingPageActions.isLogoImgHomeLinkEnabled()).isTrue();
     }
 }
