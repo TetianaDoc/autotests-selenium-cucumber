@@ -69,4 +69,24 @@ public final class SignUpPage extends BaseLandingPage {
     @FindBy(css = "input[value='Register']")
     private WebElement registerButton;
 
+    @FindBy(xpath = "//div/p[text()='Your account was created successfully. You are now logged in.']")
+    private WebElement registrationConfirmationText;
+
+    @FindBy(xpath = "//a[text()='Request Loan']")
+    private WebElement requestLoanLink;
+
+    @FindBy(id="amount")
+    private WebElement loanAmount;
+
+    @FindBy(id="downPayment")
+    private WebElement downPayment;
+
+//    @FindBy(id="fromAccountId")
+//    private WebElement fromAccountId;
+
+    @FindBy(css=".button[value='Apply Now']")
+    private WebElement applyNowButton;
+
+@FindBy(xpath = "//h1[text()='Loan Request Processed']")
+    private WebElement loanRequestProceedTitle;
 }

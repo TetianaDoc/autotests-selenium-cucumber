@@ -76,7 +76,16 @@ class SignUpPageTest extends BaseTest {
                 signUpTestData.getConfirm());
 
         // Assert
-        assertThat(signUpActions.isPageReady()).isTrue();
+        assertThat(signUpActions.isRegistrationConfirmationTextDisplayed()).isTrue();
+    }
+    @Order(3)
+    void shouldRequetLoan() throws Exception{
+        //Act
+        signUpActions.requestLoan(signUpTestData.getLoanAmount(),
+                signUpTestData.getDownPayment());
+                //signUpTestData.getFromAccountId());
+        //Assert
+        assertThat(signUpActions.isLoanRequestProcessedTitleDisplayed()).isTrue();
     }
 }
 

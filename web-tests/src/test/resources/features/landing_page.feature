@@ -47,14 +47,14 @@ Feature: Landing page
       | "submit"           |
       | "text"             |
 
-  Scenario: The AboutUs page should open
+  Scenario: Open AboutUs page
     When click on About us link
     Then info title on About Us page is displayed
 
-  Scenario: The Services page should open
+  Scenario: Open Services page
     When click on Services link
     Then services title on Services page is displayed
 
-  Scenario: User should Login
+  Scenario: Successful Login
     When input username, password and click button log in
-    Then LogoImgHomeLink is Enabled
+    Then Accounts Overview Title is displayed

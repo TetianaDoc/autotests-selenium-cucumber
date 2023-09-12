@@ -18,38 +18,49 @@ public class SignUpPageStepDefs extends BaseTest {
     private static SignUpPageActions signUpPageActions;
     private static SignUpTestData signUpTestData;
 
-        @BeforeAll
-        public static void beforeAll() throws IOException {
-            setUp();
-            SignUpTestData.SignUpTestDataByEnv signUpTestDataByEnv =
-                    readTestData(new File(TEST_DATA), SignUpTestData.SignUpTestDataByEnv.class);
-            signUpTestData = signUpTestDataByEnv.getEnvs().get(getEnvironment());
-            signUpPageActions = new SignUpPageActions(provider, signUpTestData.getBasicUrl());
-        }
-
-
-        @AfterAll
-        public static void afterAll() {
-            signUpPageActions.tearDown();
-        }
-
-        @When("input data and click register button")
-        public void inputDataAndClickRegisterButton() {
-            signUpPageActions.signUp(signUpTestData.getFirstName(),
-                    signUpTestData.getLastName(),
-                    signUpTestData.getAddress(),
-                    signUpTestData.getCity(),
-                    signUpTestData.getState(),
-                    signUpTestData.getZipCode(),
-                    signUpTestData.getPhone(),
-                    signUpTestData.getSsn(),
-                    signUpTestData.getUsername(),
-                    signUpTestData.getPassword(),
-                    signUpTestData.getConfirm());
-        }
-        @Then("page is ready")
-        public void pageIsReady(){
-            assertThat(signUpPageActions.isPageReady()).isTrue();
-        }
+    @BeforeAll
+    public static void beforeAll() throws IOException {
+        setUp();
+        SignUpTestData.SignUpTestDataByEnv signUpTestDataByEnv =
+                readTestData(new File(TEST_DATA), SignUpTestData.SignUpTestDataByEnv.class);
+        signUpTestData = signUpTestDataByEnv.getEnvs().get(getEnvironment());
+        signUpPageActions = new SignUpPageActions(provider, signUpTestData.getBasicUrl());
     }
+
+
+    @AfterAll
+    public static void afterAll() {
+        signUpPageActions.tearDown();
+    }
+
+    @When("input data and click register button")
+    public void inputDataAndClickRegisterButton() {
+        signUpPageActions.signUp(signUpTestData.getFirstName(),
+                signUpTestData.getLastName(),
+                signUpTestData.getAddress(),
+                signUpTestData.getCity(),
+                signUpTestData.getState(),
+                signUpTestData.getZipCode(),
+                signUpTestData.getPhone(),
+                signUpTestData.getSsn(),
+                signUpTestData.getUsername(),
+                signUpTestData.getPassword(),
+                signUpTestData.getConfirm());
+    }
+
+    @Then("registration confirmation text is displayed")
+    public void registrationConfirmationTextIsDisplayed() {
+        assertThat(signUpPageActions.isRegistrationConfirmationTextDisplayed()).isTrue();
+    }
+
+    @Then("loan request processed title displayed")
+    public void loanRequestProcessedTitleDisplayed() {
+        assertThat(signUpPageActions.isLoanRequestProcessedTitleDisplayed()).isTrue();
+    }
+
+    @When("click on Request loan link and input data and click apply now button")
+    public void requestLoan() {
+        signUpPageActions.requestLoan(signUpTestData.getLoanAmount(), signUpTestData.getDownPayment());
+    }
+}
 

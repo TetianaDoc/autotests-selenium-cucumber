@@ -84,4 +84,9 @@ public final class LandingPage extends BaseLandingPage {
     @FindBy(css = "a[href*='news.htm']")
     private WebElement readMoreNewsLink;
 
+    //Elements appeared after successful login
+
+    @FindBy(xpath = "//h1[text()='Accounts Overview']")
+    private WebElement accountsOverviewTitle;
+
 }
