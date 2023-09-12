@@ -2,6 +2,9 @@ package com.gmail.doctatyana1.web_auto_tests.actions;
 import com.gmail.doctatyana1.web_auto_tests.core.WebDriverProvider;
 import com.gmail.doctatyana1.web_auto_tests.pages.SignUpPage;
 import lombok.extern.slf4j.Slf4j;
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
  * Provides actions for {@link SignUpPage}.
@@ -74,6 +77,7 @@ public final class SignUpPageActions extends BaseLandingPageActions implements P
     public boolean isRegisterButtonEnabled(){
         return page.getRegisterButton().isEnabled();
     }
+    public boolean isRegistrationConfirmationTextDisplayed(){return page.getRegistrationConfirmationText().isDisplayed();}
 
     //For Cucumber
     @Override
@@ -98,4 +102,17 @@ public final class SignUpPageActions extends BaseLandingPageActions implements P
     page.getConfirmPasswordInput().sendKeys(confirm);
     page.getRegisterButton().click();
   }
+  //Actions provide for Request loan
+
+    public void requestLoan(String loanAmount, String downPayment){
+        page.getRequestLoanLink().click();
+        page.getWait().until(ExpectedConditions.visibilityOfElementLocated(By.id("amount")));
+        page.getLoanAmount().sendKeys(loanAmount);
+        page.getDownPayment().sendKeys(downPayment);
+        //page.getFromAccountId().sendKeys(fromAccountId);
+        page.getApplyNowButton().click();
+    }
+    public boolean isLoanRequestProcessedTitleDisplayed(){
+        return page.getLoanRequestProceedTitle().isDisplayed();
+    }
 }

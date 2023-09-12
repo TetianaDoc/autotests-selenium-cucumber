@@ -124,4 +124,9 @@ public final class LandingPageActions extends BaseLandingPageActions implements 
     public boolean elementByInputTypeIsEnabled(String elementByInputType){
         return getPage().getDriver().findElement(By.cssSelector(format(INPUT_TYPE_PATTERN, elementByInputType))).isEnabled();
     }
+    //Actions provided for elements after successful login
+
+    public boolean isAccountsOverviewTitleDisplayed(){
+        return page.getAccountsOverviewTitle().isDisplayed();
+    }
 }

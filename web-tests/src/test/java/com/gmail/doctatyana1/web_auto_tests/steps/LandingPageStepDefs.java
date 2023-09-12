@@ -77,15 +77,13 @@ public class LandingPageStepDefs extends BaseTest {
         assertThat(servicesPageActions.isServicesTitleDisplayed()).isTrue();
     }
 
-    @When("input username, password and click  login button")
-    public void inputUsernamePasswordAndClickLogInButton() {
+    @When("input username, password and click button log in")
+    public void inputUsernamePasswordAndClickButtonLogIn() {
         landingPageActions.logIn(signInTestData.getUsername(), signInTestData.getPassword());
     }
 
-    @Then("LogoImgHomeLink is Enabled")
-    public void logoImgHomeLinkIsEnabled() {
-        assertThat(landingPageActions.isLogoImgHomeLinkEnabled()).isTrue();
+    @Then("Accounts Overview Title is displayed")
+    public void accountsOverviewTitleIsDisplayed() {
+        assertThat(landingPageActions.isAccountsOverviewTitleDisplayed()).isTrue();
     }
-
-
 }
