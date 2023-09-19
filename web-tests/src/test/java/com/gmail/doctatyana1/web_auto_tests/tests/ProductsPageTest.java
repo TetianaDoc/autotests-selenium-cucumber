@@ -15,7 +15,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 
-public class ProductsPageTest extends BaseTest {
+class ProductsPageTest extends BaseTest {
 
     private static String TEST_DATA = "src/test/resources/test-data/products-test-data.yaml";
     private static ProductsPageActions productsPageActions;

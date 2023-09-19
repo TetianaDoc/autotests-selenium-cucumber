@@ -78,14 +78,39 @@ class SignUpPageTest extends BaseTest {
         // Assert
         assertThat(signUpActions.isRegistrationConfirmationTextDisplayed()).isTrue();
     }
+    @Test
     @Order(3)
-    void shouldRequetLoan() throws Exception{
+    void shouldRequestLoan() throws Exception{
         //Act
         signUpActions.requestLoan(signUpTestData.getLoanAmount(),
                 signUpTestData.getDownPayment());
-                //signUpTestData.getFromAccountId());
         //Assert
         assertThat(signUpActions.isLoanRequestProcessedTitleDisplayed()).isTrue();
+    }
+
+
+    @Test
+    @Order(4)
+    void shouldUpdateProfile() {
+        //Act
+        signUpActions.updateProfile(
+                signUpTestData.getFirstNameUpdated(),
+                signUpTestData.getLastNameUpdated(),
+                signUpTestData.getStreetUpdated(),
+                signUpTestData.getCityUpdated(),
+                signUpTestData.getStateUpdated(),
+                signUpTestData.getZippCodeUpdated());
+        //Assert
+        assertThat(signUpActions.isProfileUpdatedTitleDisplayed()).isTrue();
+    }
+
+    @Test
+    @Order(5)
+    void shouldLogout() throws Exception{
+        //Act
+        signUpActions.logOut();
+        //Assert
+        assertThat(signUpActions.isUsernameInputEnabled()).isTrue();
     }
 }
 

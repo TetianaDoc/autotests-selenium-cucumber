@@ -1,5 +1,13 @@
 envs:
   PROD:
     basicUrl: https://parabank.parasoft.com/
-    username: MonikaTester2
+    username: MonikaTester3
     password: 123Zxc
+    loanAmount: 2000
+    downPayment: 20
+    firstNameUpdated: Monika1
+    lastNameUpdated: Browny
+    streetUpdated: calle Las Mimozas
+    cityUpdated: Madrid
+    stateUpdated: Florida
+    zippCodeUpdated: 123456

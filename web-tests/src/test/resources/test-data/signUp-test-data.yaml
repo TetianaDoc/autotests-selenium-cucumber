@@ -2,15 +2,21 @@ envs:
   PROD:
     basicUrl: https://parabank.parasoft.com/parabank/register.htm
     firstName: Monika
-    lastName: Brown
+    lastName: Browny
     address: Long street
     city: London
     state: California
     zipCode: 12345
     phone: 987654
     ssn: 222222
-    username: MonikaTester2
+    username: MonikaTester3
     password: 123Zxc
     confirm: 123Zxc
     loanAmount: 2000
     downPayment: 20
+    firstNameUpdated: Monika1
+    lastNameUpdated: Browny
+    streetUpdated: calle Las Mimozas
+    cityUpdated: Madrid
+    stateUpdated: Florida
+    zippCodeUpdated: 123456

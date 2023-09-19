@@ -13,7 +13,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 
-public class AboutUsPageTest extends BaseTest {
+class AboutUsPageTest extends BaseTest {
 
     private static final String TEST_DATA = "src/test/resources/test-data/aboutus-test-data.yaml";
     private static AboutUsTestData aboutUsTestData;

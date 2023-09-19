@@ -20,14 +20,14 @@ public final class LandingPage extends BaseLandingPage {
 
     @Override
     public boolean isReady() {
-        getWait().until(visibilityOfAllElements(usernameInput));
-        return usernameInput.isDisplayed();
+        getWait().until(visibilityOfAllElements(getUsernameInput()));
+        return getUsernameInput().isDisplayed();
     }
 
     @Override
     public void isLoaded() throws Error {
         super.isLoaded();
-        getWait().until(ExpectedConditions.elementToBeClickable(homeButton));
+        getWait().until(ExpectedConditions.elementToBeClickable(getHomeButton()));
     }
 
     //ATM services elements

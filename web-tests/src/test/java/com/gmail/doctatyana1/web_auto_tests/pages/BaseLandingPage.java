@@ -23,100 +23,168 @@ public abstract class BaseLandingPage extends BasePage {
     //Elements of .leftMenu on #headerPanel
 
     @FindBy(className = "Solutions")
-    public WebElement solutionsTitle;
+    private WebElement solutionsTitle;
 
     @FindBy(css = ".leftmenu>li a[href*=\"about.htm\"]")
-    public WebElement aboutUsLinkOnLeftMenu;
+    private WebElement aboutUsLinkOnLeftMenu;
 
     @FindBy(css = ".leftmenu>li a[href*=\"services.htm\"]")
-    public WebElement servicesLinkOnLeftMenu;
+    private WebElement servicesLinkOnLeftMenu;
 
     @FindBy(css = ".leftmenu>li a[href=\"http://www.parasoft.com/jsp/products.jsp\"]")
-    public WebElement productsPageLinkOnLeftMenu;
+    private WebElement productsPageLinkOnLeftMenu;
 
     @FindBy(css = ".leftmenu>li a[href*=\"http://www.parasoft.com/jsp/pr/contacts.jsp\"]")
-    public WebElement locationsPageLinkOnLeftMenu;
+    private WebElement locationsPageLinkOnLeftMenu;
 
     @FindBy(css = ".leftmenu>li a[href*=\"admin.htm\"]")
-    public WebElement adminPageLinkOnLeftMenu;
+    private WebElement adminPageLinkOnLeftMenu;
 
     //Elements of .button on #headerPanel
 
     @FindBy(css = ".home a[href*='/parabank/index.htm;']")
-    public WebElement homeButton;
+    private WebElement homeButton;
 
     @FindBy(css = ".button>li a[href*=\"about.htm\"]")
-    public WebElement aboutUsButton;
+    private WebElement aboutUsButton;
 
     @FindBy(css = ".button>li a[href*=\"contact.htm\"]")
-    public WebElement contactButton;
+    private WebElement contactButton;
 
     //Elements of #loginPanel on #leftPanel of #bodyPanel
 
     @FindBy(css = "input[name=\"username\"]")
-    public WebElement usernameInput;
+    private WebElement usernameInput;
 
     @FindBy(css = "input[name=\"password\"]")
-    public WebElement passwordInput;
+    private WebElement passwordInput;
 
     @FindBy(css = "input[value=\"Log In\"]")
-    public WebElement logInButton;
+    private WebElement logInButton;
 
     @FindBy(css = "a[href*='lookup.htm']")
-    public WebElement restorePasswordLink;
+    private WebElement restorePasswordLink;
 
     @FindBy(xpath = "//div/h2[text()=\"Customer Login\"]")
-    public WebElement customerLoginTitle;
+    private WebElement customerLoginTitle;
 
     @FindBy(css = "a[href*=\"register.htm\"]")
-    public WebElement signUpLink;
+    private WebElement signUpLink;
 
     @FindBy(xpath = "//form/p/b[text()=\"Username\"]")
-    public WebElement usernameTitle;
+    private WebElement usernameTitle;
 
     @FindBy(xpath = "//form/p/b[text()=\"Password\"]")
-    public WebElement passwordTitle;
+    private WebElement passwordTitle;
 
 //Elements of #topPanel
 
     @FindBy(css = ".logo[title=\"ParaBank\"]")
-    public WebElement logoImgHomeLink;
+    private WebElement logoImgHomeLink;
 
     @FindBy(xpath = "//div/p[text()=\"Experience the difference\"]")
-    public WebElement sloganTitle;
+    private WebElement sloganTitle;
 
     @FindBy(className = "admin")
-    public WebElement adminImgLink;
+    private WebElement adminImgLink;
 
 //Elements on #footermainPanel
 
     @FindBy(css = "#footerPanel a[href*=\"/parabank/index.htm\"]")
-    public WebElement homeLinkOnFooterPanel;
+    private WebElement homeLinkOnFooterPanel;
 
     @FindBy(css = "#footerPanel a[href*=\"about.htm\"]")
-    public WebElement aboutUsLinkOnFooterPanel;
+    private WebElement aboutUsLinkOnFooterPanel;
 
     @FindBy(css = "#footerPanel a[href*=\"services.htm\"]")
-    public WebElement servicesLinkOnFooterPanel;
+    private WebElement servicesLinkOnFooterPanel;
 
     @FindBy(css = "#footerPanel a[href=\"http://www.parasoft.com/jsp/products.jsp\"]")
-    public WebElement productsPageLinkOnFooterPanel;
+    private WebElement productsPageLinkOnFooterPanel;
 
     @FindBy(css = "#footerPanel  a[href*=\"http://www.parasoft.com/jsp/pr/contacts.jsp\"]")
-    public WebElement locationsPageLinkOnFooterPanel;
+    private WebElement locationsPageLinkOnFooterPanel;
 
     @FindBy(css = "#footerPanel a[href=\"http://forums.parasoft.com/\"]")
-    public WebElement forumPageLink;
+    private WebElement forumPageLink;
 
     @FindBy(css = "#footerPanel a[href*=\"/parabank/sitemap.htm\"]")
-    public WebElement siteMapLink;
+    private WebElement siteMapLink;
 
     @FindBy(css = "#footerPanel a[href*=\"contact.htm\"]")
-    public WebElement contactUsLink;
+    private WebElement contactUsLink;
 
     @FindBy(className = "copyright")
-    public WebElement copyrightTitle;
+    private WebElement copyrightTitle;
 
-@FindBy(css=".visit a[href=\"http://www.parasoft.com/\"]")
-    public WebElement visitUsLink;
+    @FindBy(css = ".visit a[href=\"http://www.parasoft.com/\"]")
+    private WebElement visitUsLink;
+
+    //The same web elements for Sign Up page and Landing (LogIn) page after users registration/logging
+
+    @FindBy(xpath = "//a[text()='Request Loan']")
+    private WebElement requestLoanLink;
+
+    @FindBy(id = "amount")
+    private WebElement loanAmount;
+
+    @FindBy(id = "downPayment")
+    private WebElement downPayment;
+
+    @FindBy(css = ".button[value='Apply Now']")
+    private WebElement applyNowButton;
+
+    @FindBy(xpath = "//h1[text()='Loan Request Processed']")
+    private WebElement loanRequestProceedTitle;
+
+    @FindBy(xpath = "//a[text()='Log Out']")
+    private WebElement logOutLink;
+
+    @FindBy(xpath = "//a[text()='Update Contact Info']")
+    private WebElement updateContactInfoLink;
+
+    @FindBy(xpath = "//h1[text()='Update profile']")
+    private WebElement updateProfileTitle;
+
+    @FindBy(id = "customer.address.street")
+    private WebElement addressStreetInput;
+
+    @FindBy(id = "customer.firstName")
+    private WebElement firstNameInput;
+
+    @FindBy(id = "customer.lastName")
+    private WebElement lastNameInput;
+
+    @FindBy(id = "customer.address.city")
+    private WebElement addressCityInput;
+
+    @FindBy(id = "customer.address.state")
+    private WebElement addressStateInput;
+
+    @FindBy(id = "customer.address.zipCode")
+    private WebElement addressZipCodeInput;
+
+    @FindBy(id = "customer.phoneNumber")
+    private WebElement phoneNumberInput;
+
+    @FindBy(css = "form[name='contact']")
+    private WebElement formContact;
+
+    @FindBy(xpath = "//h1[text()='Profile Updated']")
+    private WebElement profileUpdatedTitle;
+
+    @FindBy(xpath = "//a[text()='Find Transactions']")
+    private WebElement findTransactionsLink;
+
+    @FindBy(xpath = "//a[text()='Bill Pay']")
+    private WebElement billPayLink;
+
+    @FindBy(xpath = "//a[text()='Transfer Funds']")
+    private WebElement transferFundsLink;
+
+    @FindBy(xpath = "//a[text()='Accounts Overview']")
+    private WebElement accountsOverviewLink;
+
+    @FindBy(xpath = "//a[text()='Open New Account']")
+    private WebElement openNewAccountLink;
 }
