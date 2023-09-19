@@ -30,6 +30,6 @@ public class ServicesPage extends BaseLandingPage {
     }
 
     @FindBy(xpath = "//div/span[text()='Available Bookstore SOAP services:']")
-    public WebElement servicesTitle;
+    private WebElement servicesTitle;
 
 }

@@ -6,6 +6,7 @@ import com.gmail.doctatyana1.web_auto_tests.actions.ServicesPageActions;
 import com.gmail.doctatyana1.web_auto_tests.pages.LandingPage;
 import com.gmail.doctatyana1.web_auto_tests.model.SignInTestData;
 import com.gmail.doctatyana1.web_auto_tests.model.SignInTestData.SignInTestDataByEnv;
+import io.cucumber.java.en.Then;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 
@@ -18,6 +19,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Tests for {@link LandingPage} including sign in.
  */
 @TestMethodOrder(OrderAnnotation.class)
+
 class LandingPageTest extends BaseTest {
 
     private static final String TEST_DATA = "src/test/resources/test-data/signIn-test-data.yaml";
@@ -124,6 +126,39 @@ class LandingPageTest extends BaseTest {
 
         // Assert
         assertThat(landingPageActions.isAccountsOverviewTitleDisplayed()).isTrue();
+    }
+
+    @Test
+    @Order(5)
+    void shouldRequestLoan() throws Exception {
+        //Act
+        landingPageActions.requestLoan(signInTestData.getLoanAmount(), signInTestData.getDownPayment());
+        //Assert
+        assertThat(landingPageActions.isLoanRequestProcessedTitleDisplayed()).isTrue();
+    }
+
+    @Test
+    @Order(6)
+    void shouldUpdateProfile() {
+        //Act
+        landingPageActions.updateProfile(
+                signInTestData.getFirstNameUpdated(),
+                signInTestData.getLastNameUpdated(),
+                signInTestData.getStreetUpdated(),
+                signInTestData.getCityUpdated(),
+                signInTestData.getStateUpdated(),
+                signInTestData.getZippCodeUpdated());
+        //Assert
+        assertThat(landingPageActions.isProfileUpdatedTitleDisplayed()).isTrue();
+    }
+
+    @Test
+    @Order(7)
+    void shouldLogout() {
+        //Act
+        landingPageActions.logOut();
+        //Assert
+        assertThat(landingPageActions.isUsernameInputEnabled()).isTrue();
     }
 }
 

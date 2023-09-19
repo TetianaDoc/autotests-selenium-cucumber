@@ -58,3 +58,15 @@ Feature: Landing page
   Scenario: Successful Login
     When input username, password and click button log in
     Then Accounts Overview Title is displayed
+
+  Scenario: Request loan
+    When click on Request loan and input data and click apply button
+    Then request processed title displayed
+
+  Scenario: Update profile
+    When click on Update profile and input data and click update
+    Then profile updated title displayed
+
+  Scenario: Logout
+    When click on logout
+    Then username input enabled

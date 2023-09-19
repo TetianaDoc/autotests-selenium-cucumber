@@ -35,7 +35,8 @@ public class SignUpPageStepDefs extends BaseTest {
 
     @When("input data and click register button")
     public void inputDataAndClickRegisterButton() {
-        signUpPageActions.signUp(signUpTestData.getFirstName(),
+        signUpPageActions.signUp(
+                signUpTestData.getFirstName(),
                 signUpTestData.getLastName(),
                 signUpTestData.getAddress(),
                 signUpTestData.getCity(),
@@ -60,7 +61,35 @@ public class SignUpPageStepDefs extends BaseTest {
 
     @When("click on Request loan link and input data and click apply now button")
     public void requestLoan() {
-        signUpPageActions.requestLoan(signUpTestData.getLoanAmount(), signUpTestData.getDownPayment());
+        signUpPageActions.requestLoan(
+                signUpTestData.getLoanAmount(),
+                signUpTestData.getDownPayment());
+    }
+
+    @When("click on logout button")
+    public void logOut() {
+        signUpPageActions.logOut();
+    }
+
+    @Then("username input field enabled")
+    public void usernameInputEnabled() {
+        assertThat(signUpPageActions.isUsernameInputEnabled()).isTrue();
+    }
+
+    @When("click on Update profile link and input data and click update")
+    public void updateProfile() {
+        signUpPageActions.updateProfile(
+                signUpTestData.getFirstNameUpdated(),
+                signUpTestData.getLastNameUpdated(),
+                signUpTestData.getStreetUpdated(),
+                signUpTestData.getCityUpdated(),
+                signUpTestData.getStateUpdated(),
+                signUpTestData.getZippCodeUpdated());
+    }
+
+    @Then("profile updated title is displayed")
+    public void profileUpdatedTitleIsDisplayed() {
+        assertThat(signUpPageActions.isProfileUpdatedTitleDisplayed()).isTrue();
     }
 }
 

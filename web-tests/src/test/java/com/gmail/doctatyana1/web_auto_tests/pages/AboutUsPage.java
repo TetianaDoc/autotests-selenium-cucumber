@@ -25,8 +25,8 @@ public class AboutUsPage extends BaseLandingPage {
 
     @Override
     public boolean isReady() {
-        getWait().until(visibilityOfAllElements(usernameInput));
-        return usernameInput.isDisplayed();
+        getWait().until(visibilityOfAllElements(getUsernameInput()));
+        return getUsernameInput().isDisplayed();
     }
 
     @FindBy(className = "title")

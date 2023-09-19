@@ -28,10 +28,6 @@ public class SignUpTestData extends BaseTestData {
   private String password;
   private String confirm;
 
-  private String loanAmount;
-  private String downPayment;
-  //private String fromAccountId;
-
   @Getter
   @Setter
   public static class SignUpTestDataByEnv {

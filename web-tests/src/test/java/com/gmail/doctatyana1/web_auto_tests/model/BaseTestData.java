@@ -13,4 +13,12 @@ public abstract class BaseTestData {
   private String basicUrl;
   private String username;
   private String password;
+  private String loanAmount;
+  private String downPayment;
+  private String firstNameUpdated;
+  private String lastNameUpdated;
+  private String streetUpdated;
+  private String cityUpdated;
+  private String stateUpdated;
+  private String zippCodeUpdated;
 }

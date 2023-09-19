@@ -7,7 +7,6 @@ import com.gmail.doctatyana1.web_auto_tests.model.SignInTestData;
 import com.gmail.doctatyana1.web_auto_tests.tests.BaseTest;
 import io.cucumber.java.AfterAll;
 import io.cucumber.java.BeforeAll;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -85,5 +84,41 @@ public class LandingPageStepDefs extends BaseTest {
     @Then("Accounts Overview Title is displayed")
     public void accountsOverviewTitleIsDisplayed() {
         assertThat(landingPageActions.isAccountsOverviewTitleDisplayed()).isTrue();
+    }
+
+    @When("click on logout")
+    public void clickOnLogout() {
+        landingPageActions.logOut();
+    }
+
+    @Then("username input enabled")
+    public void usernameInputEnabled() {
+        assertThat(landingPageActions.isUsernameInputEnabled()).isTrue();
+    }
+
+    @When("click on Request loan and input data and click apply button")
+    public void requestLoan() {
+        landingPageActions.requestLoan(signInTestData.getLoanAmount(), signInTestData.getDownPayment());
+    }
+
+    @Then("request processed title displayed")
+    public void requestProcessedTitleDisplayed() {
+        assertThat(landingPageActions.isLoanRequestProcessedTitleDisplayed()).isTrue();
+    }
+
+    @When("click on Update profile and input data and click update")
+    public void updateProfile() {
+        landingPageActions.updateProfile(
+                signInTestData.getFirstNameUpdated(),
+                signInTestData.getLastNameUpdated(),
+                signInTestData.getStreetUpdated(),
+                signInTestData.getCityUpdated(),
+                signInTestData.getStateUpdated(),
+                signInTestData.getZippCodeUpdated());
+    }
+
+    @Then("profile updated title displayed")
+    public void profileUpdatedTitleDisplayed() {
+        assertThat(landingPageActions.isProfileUpdatedTitleDisplayed()).isTrue();
     }
 }
